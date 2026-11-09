@@ -24,7 +24,7 @@
 
 ## Step 4 — Wireframe
 
-See `wireframe.svg` (open it in a browser and screenshot it for submission).
+See `wireframe.svg`
 
 - **Sidebar filters**
   - `st.date_input` → `order_date` (date range)
