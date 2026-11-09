@@ -8,7 +8,7 @@ It answers four questions for a sales manager:
 3. Do discounts bring bigger orders?
 4. Do returned orders get lower ratings?
 
-**Live app:** _paste your Streamlit Cloud URL here_
+**Live app:** https://lab43adamlong-8epbkoaccqletvg2sqwn4n.streamlit.app/
 
 ## Run locally
 
