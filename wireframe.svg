@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 980" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1100" height="980" fill="#ffffff"/>
+  <style>
+    .box{fill:#fff;stroke:#333;stroke-width:2}
+    .kpi{fill:#eaf5ea;stroke:#2e7d32;stroke-width:2}
+    .chart{fill:#fff4e5;stroke:#e65100;stroke-width:2}
+    .ins{fill:#f3e8fb;stroke:#6a1b9a;stroke-width:2}
+    .side{fill:#eef3fb;stroke:#1565c0;stroke-width:2}
+    .h{font-size:22px;font-weight:700;fill:#111}
+    .t{font-size:15px;fill:#222}
+    .b{font-size:15px;font-weight:700;fill:#111}
+    .s{font-size:13px;fill:#444}
+  </style>
+
+  <text x="20" y="34" class="h">Wireframe — Online Orders Dashboard   (file: online_orders.csv)</text>
+  <text x="20" y="58" class="s">Goal: help the sales manager see when/where revenue comes from, which categories get returned, and whether discounts pay off. Audience: sales manager, weekly.</text>
+
+  <!-- Sidebar -->
+  <rect x="20" y="75" width="240" height="885" class="side"/>
+  <text x="35" y="105" class="b">SIDEBAR — filters</text>
+  <text x="35" y="140" class="t">▦ Date range</text><text x="35" y="158" class="s">st.date_input → order_date</text>
+  <text x="35" y="195" class="t">☐ Category</text><text x="35" y="213" class="s">st.multiselect → category</text>
+  <text x="35" y="250" class="t">☐ Region</text><text x="35" y="268" class="s">st.multiselect → region</text>
+  <text x="35" y="305" class="t">☐ Device</text><text x="35" y="323" class="s">st.multiselect → device</text>
+  <text x="35" y="360" class="t">◉ Customer type</text><text x="35" y="378" class="s">st.radio → customer_type</text>
+  <text x="35" y="430" class="s">If no rows match →</text>
+  <text x="35" y="448" class="s">st.warning + st.stop()</text>
+
+  <!-- Title -->
+  <text x="285" y="105" class="h">🛒 Online Orders 2025</text>
+
+  <!-- KPIs -->
+  <g>
+    <rect x="285" y="120" width="150" height="75" class="kpi"/><text x="295" y="145" class="b">Total revenue</text><text x="295" y="170" class="s">st.metric · USD</text>
+    <rect x="445" y="120" width="150" height="75" class="kpi"/><text x="455" y="145" class="b">Orders</text><text x="455" y="170" class="s">st.metric · count</text>
+    <rect x="605" y="120" width="150" height="75" class="kpi"/><text x="615" y="145" class="b">Avg order value</text><text x="615" y="170" class="s">st.metric · USD</text>
+    <rect x="765" y="120" width="150" height="75" class="kpi"/><text x="775" y="145" class="b">Return rate</text><text x="775" y="170" class="s">st.metric · %</text>
+    <rect x="925" y="120" width="150" height="75" class="kpi"/><text x="935" y="145" class="b">Avg rating</text><text x="935" y="170" class="s">st.metric · 1–5</text>
+  </g>
+
+  <!-- Q1 line -->
+  <rect x="285" y="210" width="790" height="190" class="chart"/>
+  <text x="300" y="235" class="b">Q1  Monthly revenue — LINE chart (interactive: hover tooltip + zoom)</text>
+  <text x="300" y="255" class="s">x = order_date (month) · y = revenue (USD) · tooltip: orders</text>
+  <polyline points="320,360 380,365 440,350 500,348 560,368 620,360 680,330 740,358 800,345 860,355 920,345 1040,280" fill="none" stroke="#e65100" stroke-width="3"/>
+  <text x="300" y="390" class="s">caption: what the chart shows</text>
+
+  <!-- Q2 -->
+  <rect x="285" y="415" width="390" height="200" class="chart"/>
+  <text x="300" y="440" class="b">Q2a  Revenue by category — BAR</text>
+  <text x="300" y="460" class="s">x = category · y = sum(revenue) USD · value labels</text>
+  <rect x="320" y="530" width="50" height="50" fill="#ccc"/><rect x="390" y="490" width="50" height="90" fill="#ccc"/><rect x="460" y="470" width="50" height="110" fill="#ccc"/><rect x="530" y="545" width="50" height="35" fill="#ccc"/>
+  <text x="300" y="605" class="s">caption</text>
+
+  <rect x="685" y="415" width="390" height="200" class="chart"/>
+  <text x="700" y="440" class="b">Q2b  Return rate by category — BAR</text>
+  <text x="700" y="460" class="s">x = category · y = % returned · value labels</text>
+  <rect x="720" y="550" width="50" height="30" fill="#ccc"/><rect x="790" y="490" width="50" height="90" fill="#ccc"/><rect x="860" y="555" width="50" height="25" fill="#ccc"/><rect x="930" y="555" width="50" height="25" fill="#ccc"/>
+  <text x="700" y="605" class="s">caption</text>
+
+  <!-- Q3 Q4 -->
+  <rect x="285" y="630" width="390" height="180" class="chart"/>
+  <text x="300" y="655" class="b">Q3  Discount vs order size — BAR</text>
+  <text x="300" y="675" class="s">x = discount_pct · y = avg revenue (USD) &amp; avg units</text>
+  <text x="300" y="795" class="s">caption</text>
+
+  <rect x="685" y="630" width="390" height="180" class="chart"/>
+  <text x="700" y="655" class="b">Q4  Rating: returned vs kept — BAR</text>
+  <text x="700" y="675" class="s">x = returned · y = avg rating_1to5 · value labels</text>
+  <text x="700" y="795" class="s">caption</text>
+
+  <!-- Insights -->
+  <rect x="285" y="825" width="790" height="95" class="ins"/>
+  <text x="300" y="850" class="b">💡 Insights panel — 4 takeaways with numbers (one per question)</text>
+  <text x="300" y="872" class="s">Q1 peak month …  ·  Q2 top category / most returns …  ·  Q3 discount effect …  ·  Q4 rating gap …</text>
+  <text x="300" y="895" class="s">Updates with the filters.</text>
+
+  <rect x="285" y="930" width="790" height="30" class="box"/>
+  <text x="300" y="951" class="s">▸ Expander: raw filtered data + data notes (blank-value handling)</text>
+</svg>
