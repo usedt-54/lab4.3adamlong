@@ -42,10 +42,4 @@ See `wireframe.svg` (open it in a browser and screenshot it for submission).
 
 ## Step 5 — Gallery walk votes
 
-*(Fill in after looking at classmates' wireframes in the Teams channel.)*
-
-| Category | Group # | Dataset | Why |
-|----------|---------|---------|-----|
-| Most Creative | | | |
-| Most Practical | | | |
-| Best Storytelling | | | |
+i had to leave for work at 1:30 that day, so i wasn't able to do this part
